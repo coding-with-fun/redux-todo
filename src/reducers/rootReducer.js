@@ -30,6 +30,15 @@ const rootReducer = (state = initState, action) => {
 	}
 
 	if (action.type === "DELETE_TODO") {
+		console.log(action);
+		let newList = state.todoList.filter((post) => {
+			return post.id !== action.id;
+		});
+
+		return {
+			...state,
+			todoList: newList,
+		};
 	}
 
 	return state;
