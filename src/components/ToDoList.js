@@ -1,18 +1,25 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class ToDoList extends Component {
 	render() {
-		return (
-			<div>
-				<ul>
-					<div>Task 1</div>
-					<div>Task 2</div>
-					<div>Task 3</div>
-					<div>Task 4</div>
-				</ul>
-			</div>
+		const { todos } = this.props;
+
+		const todoList = todos.length ? (
+			todos.map((todo) => {
+				return <div key={todo.id}>{todo.title}</div>;
+			})
+		) : (
+			<div>No data found</div>
 		);
+		return <div>{todoList}</div>;
 	}
 }
 
-export default ToDoList;
+const fetchData = (state) => {
+	return {
+		todos: state.todoList,
+	};
+};
+
+export default connect(fetchData)(ToDoList);
