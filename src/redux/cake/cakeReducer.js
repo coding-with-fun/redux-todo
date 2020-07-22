@@ -3,20 +3,19 @@ const initState = {
 };
 
 const cakeReducer = (state = initState, action) => {
-	console.log(action);
+	if (!action.cakes) {
+		action.cakes = 1;
+	}
 	switch (action.type) {
 		case "ADD_CAKE":
-			console.log("Cake Added!");
-
 			return {
 				...state,
-				numOfCakes: state.numOfCakes + 1,
+				numOfCakes: state.numOfCakes + parseInt(action.cakes),
 			};
 		case "BUY_CAKE":
-			console.log("Cake Sold!");
 			return {
 				...state,
-				numOfCakes: state.numOfCakes - 1,
+				numOfCakes: state.numOfCakes - parseInt(action.cakes),
 			};
 		default:
 			return state;
