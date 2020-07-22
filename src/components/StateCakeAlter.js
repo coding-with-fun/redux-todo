@@ -7,12 +7,12 @@ class StateCakeAlter extends Component {
 		noOfCake: 0,
 	};
 
-	buyCake = () => {
-		this.props.buyCake(this.state.noOfCake);
+	funBuyCake = () => {
+		this.props.buyCakes(this.state.noOfCake);
 	};
 
-	addCake = () => {
-		this.props.addCake(this.state.noOfCake);
+	funAddCake = () => {
+		this.props.addCakes(this.state.noOfCake);
 	};
 
 	render() {
@@ -26,8 +26,8 @@ class StateCakeAlter extends Component {
 						})
 					}
 				/>
-				<button onClick={this.addCake}>Add Cake</button>
-				<button onClick={this.buyCake}>Buy Cake</button>
+				<button onClick={this.funAddCake}>Add Cake</button>
+				<button onClick={this.funBuyCake}>Buy Cake</button>
 			</div>
 		);
 	}
@@ -35,11 +35,11 @@ class StateCakeAlter extends Component {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		buyCake: (noOfCake) => {
+		buyCakes: (noOfCake) => {
 			dispatch(buyCake(noOfCake));
 		},
 
-		addCake: (noOfCake) => {
+		addCakes: (noOfCake) => {
 			dispatch(addCake(noOfCake));
 		},
 	};
