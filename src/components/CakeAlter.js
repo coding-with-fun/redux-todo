@@ -18,10 +18,6 @@ function CakeAlter(props) {
 	);
 }
 
-const mapStateToProps = (state) => {
-	return state;
-};
-
 const mapDispatchToProps = (dispatch) => {
 	return {
 		buyCake: () => {
@@ -34,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CakeAlter);
+export default connect(null, mapDispatchToProps)(CakeAlter);

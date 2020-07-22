@@ -33,10 +33,6 @@ class StateCakeAlter extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return state;
-};
-
 const mapDispatchToProps = (dispatch) => {
 	return {
 		buyCake: (noOfCake) => {
@@ -49,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StateCakeAlter);
+export default connect(null, mapDispatchToProps)(StateCakeAlter);
