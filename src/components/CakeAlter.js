@@ -12,8 +12,8 @@ function CakeAlter(props) {
 	return (
 		<div>
 			<input type="text" onChange={(e) => changeCake(e)} />
-			<button onClick={props.buyCake}>Buy cake</button>
-			<button onClick={props.addCake}>Add cake</button>
+			<button onClick={props.buyCake}>Buy Cake</button>
+			<button onClick={props.addCake}>Add Cake</button>
 		</div>
 	);
 }
